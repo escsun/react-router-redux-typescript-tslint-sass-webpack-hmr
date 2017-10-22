@@ -41,6 +41,7 @@ const development = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
         new HtmlWebpackPlugin({template: "./index.html", inject: true}),
     ],
     devServer: {
