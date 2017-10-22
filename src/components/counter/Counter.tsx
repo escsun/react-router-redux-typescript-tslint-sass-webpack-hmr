@@ -5,16 +5,24 @@ interface State {
 }
 
 class Counter extends React.Component<{}, State> {
+  timerId: any;
+
   constructor() {
     super();
 
     this.state = {
       count: 0
     };
+  }
 
-    setInterval(() => {
+  componentWillMount() {
+    this.timerId = setInterval(() => {
       this.setState({count: this.state.count + 1});
     }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerId);
   }
 
   render() {
