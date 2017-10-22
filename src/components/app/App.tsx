@@ -6,7 +6,7 @@ import Hello from "../hello/Hello";
 function App() {
   return (
     <div>
-      <h1>Welcome to React Typescript</h1>
+      <h1>Welcome to React with Typescript</h1>
       <Hello name="React"/>
       <Counter />
     </div>
