@@ -3,7 +3,7 @@ import * as React from "react";
 import Counter from "../counter/Counter";
 import Hello from "../hello/Hello";
 
-function App() {
+const App = () => {
   return (
     <div>
       <h1>Welcome to React with Typescript</h1>
@@ -11,6 +11,6 @@ function App() {
       <Counter />
     </div>
   );
-}
+};
 
 export default App;

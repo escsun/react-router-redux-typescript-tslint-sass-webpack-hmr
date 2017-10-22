@@ -4,10 +4,10 @@ interface Props {
   name: string;
 }
 
-function Hello(props: Props) {
+const Hello = (props: Props) => {
   return (
     <div>Hello, {props.name}</div>
   );
-}
+};
 
 export default Hello;
