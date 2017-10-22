@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <h1>Welcome to React Typescript</h1>
-      <Hello name="Bob"/>
+      <Hello name="React"/>
       <Counter />
     </div>
   );
