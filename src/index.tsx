@@ -11,7 +11,7 @@ import "./index.scss";
 
 const root = document.getElementById("root") as HTMLElement;
 
-const render = (Component: any) => {
+const render = (Component: React.ComponentType) => {
   ReactDOM.render(
     <AppContainer>
       <Component />
