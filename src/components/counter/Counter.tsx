@@ -25,7 +25,7 @@ class Counter extends React.Component<{}, State> {
     clearInterval(this.timerId);
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <div>
         Counter: {this.state.count}

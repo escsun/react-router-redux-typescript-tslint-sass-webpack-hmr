@@ -4,7 +4,7 @@ interface Props {
   name: string;
 }
 
-const Hello = (props: Props) => {
+const Hello = (props: Props): JSX.Element => {
   return (
     <div>Hello, {props.name}</div>
   );
