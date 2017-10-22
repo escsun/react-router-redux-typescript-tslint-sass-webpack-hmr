@@ -4,7 +4,7 @@
   "description": "Starter kit for React, Webpack, TypeScript, TsLint, Sass and Hot Module Replacment (HMR)",
   "main": "index.tsx",
   "author": "escsun <escsunarcher@gmail.com>",
-  "license": "GPLv3",
+  "license": "GPL-3.0",
   "scripts": {
     "start": "better-npm-run dev",
     "build": "better-npm-run build"
