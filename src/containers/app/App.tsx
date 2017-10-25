@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import Counter from "../counter/Counter";
-import Hello from "../hello/Hello";
+import Counter from "../../components/counter/Counter";
+import Hello from "../../components/hello/Hello";
 
 const App = (): JSX.Element => {
   return (
