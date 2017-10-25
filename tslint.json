@@ -12,7 +12,8 @@
     "member-access": false,
     "no-empty": false,
     "no-var-requires": false,
-    "trailing-comma": false
+    "trailing-comma": false,
+    "max-classes-per-file": [false]
   },
   "rulesDirectory": []
 }
