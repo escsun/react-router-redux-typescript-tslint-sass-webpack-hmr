@@ -1,7 +1,11 @@
 import { combineReducers } from "redux";
 import * as fromCounter from "./counter";
 
-const rootReducer = combineReducers({
+export interface RootState {
+  counter: fromCounter.State;
+}
+
+const rootReducer = combineReducers<RootState>({
   counter: fromCounter.counterReducer
 });
 
