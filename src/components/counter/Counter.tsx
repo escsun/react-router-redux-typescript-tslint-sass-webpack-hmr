@@ -7,7 +7,7 @@ interface Props {
   onReset: () => void;
 }
 
-const Counter = (props: Props) => {
+const Counter = (props: Props): JSX.Element => {
   return (
     <div>
       Counter: {props.count}
