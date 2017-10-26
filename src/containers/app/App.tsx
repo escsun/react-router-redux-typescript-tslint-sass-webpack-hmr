@@ -8,7 +8,7 @@ const App = (): JSX.Element => {
     <div>
       <h1>Welcome to React with Typescript</h1>
       <Hello name="React"/>
-      <Counter />
+      {/*<Counter />*/}
     </div>
   );
 };
