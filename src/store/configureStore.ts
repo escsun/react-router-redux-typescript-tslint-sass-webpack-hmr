@@ -2,6 +2,8 @@ import {
   applyMiddleware,
   createStore
 } from "redux";
+import createHistory from "history/createBrowserHistory";
+import { routerMiddleware } from "react-router-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
@@ -10,15 +12,20 @@ import rootReducer from "../reducers/index";
 
 declare let module: IHotModule;
 
-const middleware = [
+export const history = createHistory();
+
+const router = routerMiddleware(history);
+
+const middlewares = [
   thunk,
+  router,
 ];
 
 const configureStore = (initialState: object = {}) => {
   const store = createStore(
     rootReducer,
     initialState,
-    composeWithDevTools(applyMiddleware(...middleware))
+    composeWithDevTools(applyMiddleware(...middlewares))
   );
 
   if (module.hot) {
