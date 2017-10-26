@@ -21,4 +21,4 @@ export function counterReducer(state: State = initialState, action: Action) {
   }
 }
 
-export const fetchCount = (state: State) => state.count;
+export default counterReducer;
