@@ -16,6 +16,7 @@ function mapDispatchToProps(dispatch: Dispatch<RootState>) {
   return {
     onDecrement: () => dispatch({type: counterActions.DECREMENT}),
     onIncrement: () => dispatch({type: counterActions.INCREMENT}),
+    onReset: () => dispatch({type: counterActions.RESET}),
   };
 }
 

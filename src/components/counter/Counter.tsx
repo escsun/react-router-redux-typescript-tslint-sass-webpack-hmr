@@ -4,6 +4,7 @@ interface Props {
   count: number;
   onIncrement: () => void;
   onDecrement: () => void;
+  onReset: () => void;
 }
 
 const Counter = (props: Props) => {
@@ -12,6 +13,7 @@ const Counter = (props: Props) => {
       Counter: {props.count}
       <div className="btn-group">
         <button onClick={props.onIncrement}>+</button>
+        <button onClick={props.onReset}>R</button>
         <button onClick={props.onDecrement}>-</button>
       </div>
     </div>

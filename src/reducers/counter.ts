@@ -16,6 +16,8 @@ export function counterReducer(state: State = initialState, action: Action) {
       return {...state, count: state.count + 1};
     case counterActions.DECREMENT:
       return {...state, count: state.count - 1};
+    case counterActions.RESET:
+      return {...state, count: initialState.count};
     default:
       return state;
   }
