@@ -1,8 +1,4 @@
 import * as counterActions from "../actions/counter";
-import {
-  Reducer,
-  ReducersMapObject
-} from "redux";
 
 export interface State {
   count: number;
