@@ -4,22 +4,26 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
+import { ConnectedRouter } from "react-router-redux";
 
 import { IHotModule } from "./interfaces/hot-module.interface";
 
 declare let module: IHotModule;
 
+import configureStore, { history } from "./store/configureStore";
 import App from "./containers/app/App";
 import "./index.scss";
-import configureStore from "./store/configureStore";
 
 const root = document.getElementById("root") as HTMLElement;
+const store = configureStore();
 
 const render = (Component: React.ComponentType) => {
   ReactDOM.render(
     <AppContainer>
-      <Provider store={configureStore()}>
-        <Component />
+      <Provider store={store}>
+        <ConnectedRouter history={history}>
+          <Component/>
+        </ConnectedRouter>
       </Provider>
     </AppContainer>,
     root
