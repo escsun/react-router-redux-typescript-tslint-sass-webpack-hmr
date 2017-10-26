@@ -14,7 +14,8 @@
     "no-var-requires": false,
     "trailing-comma": false,
     "max-classes-per-file": [false],
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false,
+    "ordered-imports": false
   },
   "rulesDirectory": []
 }
