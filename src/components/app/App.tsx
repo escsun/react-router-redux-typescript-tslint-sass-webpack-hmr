@@ -1,7 +1,7 @@
 import * as React from "react";
 
-import Main from "../../components/main/Main.";
-import Nav from "../../components/nav/Nav";
+import Main from "../main/Main.";
+import Nav from "../nav/Nav";
 
 const App = (): JSX.Element => {
   return (

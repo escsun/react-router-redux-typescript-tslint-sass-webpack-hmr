@@ -11,7 +11,7 @@ import { IHotModule } from "./interfaces/hot-module.interface";
 declare let module: IHotModule;
 
 import configureStore, { history } from "./store/configureStore";
-import App from "./containers/app/App";
+import App from "./components/app/App";
 import "./index.scss";
 
 const root = document.getElementById("root") as HTMLElement;
@@ -33,8 +33,8 @@ const render = (Component: React.ComponentType) => {
 render(App);
 
 if (module.hot) {
-  module.hot.accept("./containers/app/App", () => {
-    const NextApp = require("./containers/app/App").default;
+  module.hot.accept("./components/app/App", () => {
+    const NextApp = require("./components/app/App").default;
     render(NextApp);
   });
 }
