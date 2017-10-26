@@ -1,6 +1,6 @@
 # Starter kit for React, Webpack, TypeScript, TsLint, Sass and Hot Module Replacment (HMR):
 
-Minimal starter kit for react with typescript.
+Minimal starter kit for react with typescript, router and redux.
 
 ## Installation
 1. Clone/download repo
