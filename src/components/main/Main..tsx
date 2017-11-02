@@ -3,7 +3,7 @@ import {
   Route,
   Switch
 } from "react-router-dom";
-import CounterContainer from "../../containers/counter/Counter.";
+import CounterContainer from "../../containers/counter/Counter";
 import Hello from "../hello/Hello";
 
 const Main = (): JSX.Element => {
