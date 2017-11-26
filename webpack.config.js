@@ -3,10 +3,11 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const paths = {
     src: path.resolve(__dirname, "src"),
-    dist: path.resolve(__dirname, "dist")
+    dist: path.resolve(__dirname, "dist"),
 };
 
 const env = process.env.NODE_ENV;
@@ -17,7 +18,7 @@ const development = {
     context: paths.src,
     devtool: "eval",
     entry: {
-        app: ["react-hot-loader/patch", "./index"]
+        app: ["react-hot-loader/patch", "./app/index"]
     },
     output: {
         path: paths.dist,
@@ -42,7 +43,12 @@ const development = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
-        new HtmlWebpackPlugin({template: "./index.html", inject: true}),
+        new HtmlWebpackPlugin({
+            template: "./index.html",
+            favicon: "./favicon.ico",
+            inject: true
+        }),
+        new CopyWebpackPlugin([{from: "assets", to: "assets"}])
     ],
     devServer: {
         hot: true,
@@ -56,7 +62,7 @@ const production = {
     context: paths.src,
     devtool: "source-map-loader",
     entry: {
-        app: "./index"
+        app: "./app/index"
     },
     output: {
         path: paths.dist,
@@ -109,19 +115,20 @@ const production = {
         }),
         new HtmlWebpackPlugin({
             template: "./index.html",
+            favicon: "./favicon.ico",
+            inject: true,
             minify: {
                 collapseWhitespace: true,
                 preserveLineBreaks: false,
             }
         }),
-        extractStyles
+        extractStyles,
+        new CopyWebpackPlugin([{from: "assets", to: "assets"}])
     ]
 };
 
 if (__DEV__) {
     module.exports = development;
-}
-
-if (__PRODUCTION__) {
+} else {
     module.exports = production;
 }
