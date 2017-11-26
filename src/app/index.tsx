@@ -11,7 +11,7 @@ import createHistory from "history/createBrowserHistory";
 import { IHotModule } from "./models/hot-module.model";
 
 import configureStore from "./store/configureStore";
-import App from "./components/app/App";
+import Root from "./components/root/Root";
 
 const store = configureStore();
 const history = createHistory();
@@ -29,13 +29,10 @@ const render = (Component: React.ComponentType) => {
   );
 };
 
-render(App);
+render(Root);
 
 declare let module: IHotModule;
 
 if (module.hot) {
-  module.hot.accept("./components/app/App", () => {
-    const NextApp = require("./components/app/App").default;
-    render(NextApp);
-  });
+  module.hot.accept("./components/root/Root", () => render(Root));
 }
