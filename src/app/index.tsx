@@ -1,4 +1,5 @@
 import "./polyfills";
+import "./index.scss";
 
 import * as React from "react";
 import * as ReactDOM from "react-dom";
@@ -11,7 +12,6 @@ import { IHotModule } from "./models/hot-module.model";
 
 import configureStore from "./store/configureStore";
 import App from "./components/app/App";
-import "./index.scss";
 
 const store = configureStore();
 const history = createHistory();
