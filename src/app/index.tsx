@@ -5,17 +5,16 @@ import * as ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "react-router-redux";
+import createHistory from "history/createBrowserHistory";
 
-import { IHotModule } from "./interfaces/hot-module.interface";
+import { IHotModule } from "./models/hot-module.model";
 
-declare let module: IHotModule;
-
-import configureStore, { history } from "./store/configureStore";
+import configureStore from "./store/configureStore";
 import App from "./components/app/App";
 import "./index.scss";
 
-const root = document.getElementById("root") as HTMLElement;
 const store = configureStore();
+const history = createHistory();
 
 const render = (Component: React.ComponentType) => {
   ReactDOM.render(
@@ -26,11 +25,13 @@ const render = (Component: React.ComponentType) => {
         </ConnectedRouter>
       </Provider>
     </AppContainer>,
-    root
+    document.getElementById("root") as HTMLElement
   );
 };
 
 render(App);
+
+declare let module: IHotModule;
 
 if (module.hot) {
   module.hot.accept("./components/app/App", () => {
