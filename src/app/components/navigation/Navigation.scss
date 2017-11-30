@@ -10,6 +10,7 @@
       padding: 0;
       margin: 0;
       .Navigation__link {
+      	color: #222222;
         display: block;
         padding: 15px;
         text-decoration: none;
@@ -18,7 +19,6 @@
         &:hover {
           border-bottom: 3px solid #61dafb;
         }
-
         &:focus, &:visited, &:active {
           color: #222222;
         }
