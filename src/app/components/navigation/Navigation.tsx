@@ -8,10 +8,10 @@ const Navigation = (): JSX.Element => {
     <nav className="Navigation">
       <ul className="Navigation__items">
         <li className="Navigation__item">
-          <Link to="/" className="Navigation__link">Home</Link>
+          <Link to="/" className="Navigation__link link">Home</Link>
         </li>
         <li className="Navigation__item">
-          <Link to="/about" className="Navigation__link">About</Link>
+          <Link to="/about" className="Navigation__link link">About</Link>
         </li>
       </ul>
     </nav>
