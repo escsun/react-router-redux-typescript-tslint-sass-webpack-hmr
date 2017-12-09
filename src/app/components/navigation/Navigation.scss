@@ -10,12 +10,14 @@
       padding: 0;
       margin: 0;
       .Navigation__link {
-      	color: #222222;
         display: block;
         position: relative;
         padding: 15px;
         text-decoration: none;
         &:focus, &:visited, &:active {
+          color: #697071;
+        }
+        &:hover {
           color: #222222;
         }
       }

@@ -3,6 +3,10 @@ body, html {
   padding: 0;
 }
 
+body {
+  color: #697071;
+}
+
 .link {
   border-bottom: transparent 3px solid;
   border-top: transparent 3px solid;
@@ -24,4 +28,8 @@ body, html {
     transform: scaleX(1);
     visibility: visible;
   }
+}
+
+.active {
+  color: #222222 !important;
 }
