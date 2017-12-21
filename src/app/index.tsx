@@ -11,7 +11,7 @@ import createHistory from "history/createBrowserHistory";
 import { IHotModule } from "./models/hot-module.model";
 
 import configureStore from "./store/configureStore";
-import App from "./components/app/App";
+import App from "./components/App";
 
 const store = configureStore();
 const history = createHistory();
@@ -34,5 +34,5 @@ render(App);
 declare let module: IHotModule;
 
 if (module.hot) {
-  module.hot.accept("./components/app/App", () => render(App));
+  module.hot.accept("./components/App", () => render(App));
 }
