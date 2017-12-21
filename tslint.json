@@ -14,10 +14,12 @@
     "no-empty": false,
     "no-var-requires": false,
     "trailing-comma": false,
-    "max-classes-per-file": [false],
     "jsx-no-lambda": false,
     "ordered-imports": false,
-    "prefer-const": false
+    "prefer-const": false,
+    "object-literal-shorthand": false,
+    "no-shadowed-variable": false,
+    "ignore-bound-class-methods": false
   },
   "rulesDirectory": []
 }
