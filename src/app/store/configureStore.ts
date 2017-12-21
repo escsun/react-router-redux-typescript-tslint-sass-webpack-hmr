@@ -8,7 +8,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
 import { IHotModule } from "../core/models/hot-module.model";
-import rootReducer from "../reducers/index";
+import rootReducer from "../core/reducers/index";
 
 const history = createHistory();
 const router = routerMiddleware(history);
