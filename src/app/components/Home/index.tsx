@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import "./Home.scss";
+import "./index.scss";
 
 const Home = (): JSX.Element => {
   return (
