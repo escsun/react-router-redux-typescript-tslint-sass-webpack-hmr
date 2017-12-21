@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import { ConnectedRouter } from "react-router-redux";
 import createHistory from "history/createBrowserHistory";
 
-import { IHotModule } from "./models/hot-module.model";
+import { IHotModule } from "./core/models/hot-module.model";
 
 import configureStore from "./store/configureStore";
 import App from "./components/App";
