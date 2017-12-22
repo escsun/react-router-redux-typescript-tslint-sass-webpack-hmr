@@ -4,14 +4,17 @@ import {
   Switch
 } from "react-router-dom";
 
+import Layout from "../../common/Layout";
 import About from "../About";
 import Home from "../Home";
 
 const App = (): JSX.Element => {
   return (
     <Switch>
-        <Route exact={true} path="/" component={Home} />
-        <Route path="/about" component={About} />
+      <Layout>
+        <Route exact={true} path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+      </Layout>
     </Switch>
   );
 };
