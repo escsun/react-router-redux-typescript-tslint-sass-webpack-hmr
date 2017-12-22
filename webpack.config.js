@@ -35,7 +35,7 @@ const development = {
                 loaders: ["react-hot-loader/webpack", "awesome-typescript-loader"]
             },
             {
-                test: /\.scss$/,
+                test: /\.(scss|sass)$/,
                 use: [{loader: "style-loader"}, {loader: "css-loader"}, {loader: "sass-loader"}],
             }
         ]
@@ -80,7 +80,7 @@ const production = {
                 loader: ["awesome-typescript-loader"]
             },
             {
-                test: /\.scss$/,
+                test: /\.(scss|sass)$/,
                 use: extractStyles.extract({
                     use: [{
                         loader: "css-loader",
