@@ -3,20 +3,23 @@ import {
   createStore
 } from "redux";
 import createHistory from "history/createBrowserHistory";
-import { routerMiddleware } from "react-router-redux";
+import { routerMiddleware as createRouterMiddleware } from "react-router-redux";
+import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import { IHotModule } from "./models/hot-module.model";
-import rootReducer from "./reducers/index";
+import rootReducer from "./reducers";
 
 const history = createHistory();
-const router = routerMiddleware(history);
+const routerMiddleware = createRouterMiddleware(history);
+const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [
-  router,
+  routerMiddleware,
+  sagaMiddleware
 ];
 
-declare let module: IHotModule;
+declare const module: IHotModule;
 
 const configureStore = (initialState: object = {}) => {
   const store = createStore(
