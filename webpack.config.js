@@ -16,7 +16,7 @@ const __DEV__ = env === "development";
 
 const development = {
     context: paths.src,
-    devtool: "eval",
+    devtool: "cheap-module-source-map",
     entry: {
         app: ["react-hot-loader/patch", "./app/index"]
     },
@@ -61,7 +61,7 @@ const extractStyles = new ExtractTextPlugin({filename: "[name].[chunkhash].css"}
 
 const production = {
     context: paths.src,
-    devtool: "source-map-loader",
+    devtool: "source-map",
     entry: {
         app: "./app/index"
     },
