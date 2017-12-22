@@ -12,7 +12,7 @@ const paths = {
 
 const env = process.env.NODE_ENV;
 const __DEV__ = env === "development";
-const __PRODUCTION__ = env === "production";
+// const __PRODUCTION__ = env === "production";
 
 const development = {
     context: paths.src,
@@ -26,7 +26,7 @@ const development = {
         filename: "[name].bundle.js"
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx']
+        extensions: [".js", ".ts", ".tsx"]
     },
     module: {
         rules: [
@@ -71,7 +71,7 @@ const production = {
         filename: "[name].[chunkhash].js"
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx']
+        extensions: [".js", ".ts", ".tsx"]
     },
     module: {
         rules: [
