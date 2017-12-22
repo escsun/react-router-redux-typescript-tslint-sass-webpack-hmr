@@ -10,7 +10,7 @@ import createHistory from "history/createBrowserHistory";
 
 import { IHotModule } from "./core/models/hot-module.model";
 
-import configureStore from "./store/configureStore";
+import configureStore from "./core/store";
 import App from "./components/App";
 
 const store = configureStore();

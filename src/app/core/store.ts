@@ -7,8 +7,8 @@ import { routerMiddleware } from "react-router-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
-import { IHotModule } from "../core/models/hot-module.model";
-import rootReducer from "../core/reducers/index";
+import { IHotModule } from "./models/hot-module.model";
+import rootReducer from "./reducers/index";
 
 const history = createHistory();
 const router = routerMiddleware(history);
@@ -28,8 +28,9 @@ const configureStore = (initialState: object = {}) => {
   );
 
   if (module.hot) {
-    module.hot.accept("../reducers", () => {
-      store.replaceReducer(rootReducer);
+    module.hot.accept("./reducers", () => {
+      const nextRootReducer = require("./reducers/index").default;
+      store.replaceReducer(nextRootReducer);
     });
   }
 
