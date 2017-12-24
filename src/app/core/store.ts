@@ -1,32 +1,32 @@
+import { History } from "history";
 import {
   applyMiddleware,
   createStore
 } from "redux";
-import createHistory from "history/createBrowserHistory";
 import { routerMiddleware as createRouterMiddleware } from "react-router-redux";
 import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import { IHotModule } from "./models/hot-module.model";
+import IHotModule from "./models/hot-module.model";
 import rootReducer from "./reducers";
-
-const history = createHistory();
-const routerMiddleware = createRouterMiddleware(history);
-const sagaMiddleware = createSagaMiddleware();
-
-const middlewares = [
-  routerMiddleware,
-  sagaMiddleware
-];
+// import rootSaga from "./sagas";
 
 declare const module: IHotModule;
 
-const configureStore = (initialState: object = {}) => {
+const configureStore = (history: History) => {
+
+  const routerMiddleware = createRouterMiddleware(history);
+  const sagaMiddleware = createSagaMiddleware();
+
   const store = createStore(
     rootReducer,
-    initialState,
-    composeWithDevTools(applyMiddleware(...middlewares))
+    composeWithDevTools(applyMiddleware(
+      routerMiddleware,
+      sagaMiddleware
+    ))
   );
+
+  // sagaMiddleware.run(rootSaga);
 
   if (module.hot) {
     module.hot.accept("./reducers", () => {

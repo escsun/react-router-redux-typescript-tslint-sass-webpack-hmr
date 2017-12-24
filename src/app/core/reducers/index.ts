@@ -1,12 +1,15 @@
-import * as fromRouter from "react-router-redux";
+import {
+  routerReducer,
+  RouterState
+} from "react-router-redux";
 import { combineReducers } from "redux";
 
 export interface RootState {
-  routing: fromRouter.RouterState;
+  router: RouterState;
 }
 
 const rootReducer = combineReducers<RootState>({
-  routing: fromRouter.routerReducer
+  router: routerReducer
 });
 
 export default rootReducer;
